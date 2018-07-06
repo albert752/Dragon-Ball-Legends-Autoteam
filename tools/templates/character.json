@@ -6,15 +6,28 @@
         "SATK": 1460,
         "SDEF": 1243
     },
-    "Level": 1,
-    "SoulBoost": {
-        "BATK": null,
-        "BDEF": null,
-        "HP": null,
-        "SATK": null,
-        "SDEF": null
+    "EquipmentSlots": 1,
+    "Level": 1000,
+    "OtherBaseStats": {
+        "Crit": 0,
+        "Ki": 0
     },
-    "Stars": 0,
+    "OtherSoulBoost": {
+        "Crit": 67,
+        "Ki": 0
+    },
+    "OtherUserStats": {
+        "Crit": 1068,
+        "Ki": 1874
+    },
+    "SoulBoost": {
+        "BATK": 2155,
+        "BDEF": 1732,
+        "HP": 30065,
+        "SATK": 3038,
+        "SDEF": 1792
+    },
+    "Stars": 3,
     "Tags": [
         "Frieza Force",
         "Saiyan",
@@ -27,10 +40,11 @@
         "Vegeta"
     ],
     "UserStats": {
-        "BATK": null,
-        "BDEF": null,
-        "HP": null,
-        "SATK": null,
-        "SDEF": null
-    }
+        "BATK": 34393,
+        "BDEF": 19523,
+        "HP": 268571,
+        "SATK": 24245,
+        "SDEF": 19765
+    },
+    "ZPower": 0
 }
