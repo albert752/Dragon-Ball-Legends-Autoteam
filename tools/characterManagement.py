@@ -1,28 +1,38 @@
 from pprint import pprint as pp
 import json
+from colorama import Fore, Back, Style, init
 
 def loadCharacters ():
-    file = open("./database/characters.data", "r")
+    file = open("./database/characters.json", "r")
     characters = json.load(file)
     file.close()
     return characters
 
 
-def addCharacter(characters = {}, force = False):
-    '''
-    Adds a new characte to the dicst characters. It uses _addAuto and
-    _addManual dependin on the user needs. To crate the character first of all
-    loads the tempate.Then asks for the name of it and compares thos value to
-    the cahracters list. If focer = true means taht we are adding new ones form 
-    scratch so it does not check for existance. If not, checks for existance
-    and does not proceed until it gets a valid name. Then asks for auto or
-    manual set up and calls the apropiated function.
-    '''
-    # Asks for the name
-    name = input("Enter the name of the character: ")
+def saveCharacters (characters):
+    file = open("./database/characters.json", "w")
+    json.dump(characters, file, sort_keys = True, indent = 4, ensure_ascii = False)
+    file.close()
 
+
+def addCharacter(characters = {}, force = False):
+    ''''
+    Creates a character profile form a loaded template. If the parameter force
+    equals True, the base stats can be modified, in other cases those are
+    locked.
+
+    Args:
+        character: dict of characters that is going to be updated.
+        force: has a default value of false, enables the edition of base stats
+    '''
+
+    # Asks for the name
+    print(Fore.YELLOW)
+    name = input("Enter the name of the character: ")
+    print(Fore.RESET, end="")
     # Loads the template of the character
-    file = open("./templates/character.json", "r")
+    # (Path relative to main file)
+    file = open("./tools/templates/character.json", "r")
     template = json.load(file)
     file.close()
 
@@ -40,23 +50,26 @@ def addCharacter(characters = {}, force = False):
     if aux == "a":
         return _addAuto(name, force, template)
     if aux == "m":
-        return _addManual(name, force,  template)
+        aux = _addManual(name, force,  template)
+        characters.update(aux)
+        return aux
 
 
 def _addManual(name, force, template):
     '''
     Asks for each parameter in the template and retuns the modified template
     ready to be added to the characters dict
-
     '''
+
     pp(template)
     for key in template:
         if ("_" not in key):
+            print(Fore.YELLOW, end="")
             print("\nChanging "+key)
+            print(Fore.RESET, end="")
             if(type(template[key]) == dict):
                 for item in template[key]:
                     template[key][item] = int(input("Enter " + item + " value: "))
-
             elif(type(template[key]) == int):
                 template[key] = int(input("Enter " + key + " value: "))
             elif(type(template[key]) == list):
@@ -69,8 +82,10 @@ def _addManual(name, force, template):
     return {name: template}
 
 
+
 def _addAuto():
     pass
+
 
 if __name__ == "__main__":
     print("Welcome to the manual updater")
@@ -79,11 +94,13 @@ if __name__ == "__main__":
     pp(characters)
     file.close()
     cont = True
+
     while(cont):
         aux = addCharacter(force = True)
         characters.update(aux)
         pp(characters)
         cont = bool(input("Continue?  "))
+
     file = open("./databases/baseCharacters.json", "w")
     json.dump(characters, file, sort_keys = True, indent = 4, ensure_ascii = False)
     file.close()

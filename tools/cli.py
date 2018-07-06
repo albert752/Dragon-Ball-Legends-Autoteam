@@ -39,6 +39,10 @@ def printBlanks (number):
         print()
 
 
+def printCharacter (character):
+    printLine()
+
+
 if __name__ == "__main__":
     printTitle("This is a test title", "YELLOW")
     options = {"a": "Add character", "e": "add Equip", "c": "Create team", "p": "Print database"}

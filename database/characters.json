@@ -1,0 +1,62 @@
+{
+    "Andrea": {
+        "BaseStats": {
+            "BATK": 3,
+            "BDEF": 4,
+            "HP": 2,
+            "SATK": 2,
+            "SDEF": 3
+        },
+        "Level": 3,
+        "SoulBoost": {
+            "BATK": 5,
+            "BDEF": 3,
+            "HP": 4,
+            "SATK": 2,
+            "SDEF": 3
+        },
+        "Stars": 2,
+        "Tags": [
+            "hello",
+            "hello",
+            "agsdg"
+        ],
+        "UserStats": {
+            "BATK": 3,
+            "BDEF": 2,
+            "HP": 5,
+            "SATK": 3,
+            "SDEF": 4
+        }
+    },
+    "hello": {
+        "BaseStats": {
+            "BATK": 9,
+            "BDEF": 9,
+            "HP": 9,
+            "SATK": 9,
+            "SDEF": 9
+        },
+        "Level": 9,
+        "SoulBoost": {
+            "BATK": 9,
+            "BDEF": 9,
+            "HP": 9,
+            "SATK": 9,
+            "SDEF": 9
+        },
+        "Stars": 8,
+        "Tags": [
+            "kjfahsdf",
+            "asdufasd",
+            "osdafgjsad"
+        ],
+        "UserStats": {
+            "BATK": 9,
+            "BDEF": 9,
+            "HP": 9,
+            "SATK": 9,
+            "SDEF": 9
+        }
+    }
+}
