@@ -1,0 +1,37 @@
+{
+    "BaseStats": {
+        "BATK": 2237,
+        "BDEF": 1231,
+        "HP": 16456,
+        "SATK": 1460,
+        "SDEF": 1243
+    },
+    "Level": 1,
+    "Name": "Vegeta SP",
+    "SoulBoost": {
+        "BATK": null,
+        "BDEF": null,
+        "HP": null,
+        "SATK": null,
+        "SDEF": null
+    },
+    "Stars": 0,
+    "Tags": [
+        "Frieza Force",
+        "Saiyan",
+        "Male",
+        "SPARKING",
+        "Ranged",
+        "Purple",
+        "Saiyan",
+        "Saga Z",
+        "Vegeta"
+    ],
+    "UserStats": {
+        "BATK": null,
+        "BDEF": null,
+        "HP": null,
+        "SATK": null,
+        "SDEF": null
+    }
+}
