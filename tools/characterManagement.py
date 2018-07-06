@@ -64,9 +64,9 @@ def _addManual(name, force, template):
             elif(template[key] == "Name"):
                 template[key] = name
             elif(type(template[key]) == str):
-                template[key] = input("Enter " +key+ "value: ")
+                template[key] = input("Enter " +key+ " value: ")
     pp(template)
-    return template
+    return {name: template}
 
 
 def _addAuto():
@@ -81,7 +81,7 @@ if __name__ == "__main__":
     cont = True
     while(cont):
         aux = addCharacter(force = True)
-        characters.update({aux["Name"]: aux})
+        characters.update(aux)
         pp(characters)
         cont = bool(input("Continue?  "))
     file = open("./databases/baseCharacters.json", "w")

@@ -1,5 +1,5 @@
 {
-    "": {
+    "ale": {
         "BaseStats": {
             "BATK": 2,
             "BDEF": 2,
@@ -8,7 +8,6 @@
             "SDEF": 2
         },
         "Level": 2,
-        "Name": "",
         "SoulBoost": {
             "BATK": 2,
             "BDEF": 2,
@@ -16,11 +15,11 @@
             "SATK": 2,
             "SDEF": 2
         },
-        "Stars": 2,
+        "Stars": 9,
         "Tags": [
-            "hfadsf",
-            "sadfasdf",
-            "asdf"
+            "sdf",
+            "sdf",
+            "sdfg"
         ],
         "UserStats": {
             "BATK": 2,
@@ -30,39 +29,34 @@
             "SDEF": 2
         }
     },
-    "BaseStats": {
-        "BATK": 2237,
-        "BDEF": 1231,
-        "HP": 16456,
-        "SATK": 1460,
-        "SDEF": 1243
-    },
-    "Level": 1,
-    "Name": "Vegeta SP",
-    "SoulBoost": {
-        "BATK": null,
-        "BDEF": null,
-        "HP": null,
-        "SATK": null,
-        "SDEF": null
-    },
-    "Stars": 0,
-    "Tags": [
-        "Frieza Force",
-        "Saiyan",
-        "Male",
-        "SPARKING",
-        "Ranged",
-        "Purple",
-        "Saiyan",
-        "Saga Z",
-        "Vegeta"
-    ],
-    "UserStats": {
-        "BATK": null,
-        "BDEF": null,
-        "HP": null,
-        "SATK": null,
-        "SDEF": null
+    "andrea": {
+        "BaseStats": {
+            "BATK": 7,
+            "BDEF": 7,
+            "HP": 7,
+            "SATK": 7,
+            "SDEF": 7
+        },
+        "Level": 3,
+        "SoulBoost": {
+            "BATK": 3,
+            "BDEF": 3,
+            "HP": 3,
+            "SATK": 3,
+            "SDEF": 3
+        },
+        "Stars": 3,
+        "Tags": [
+            "fgsdf",
+            "sadf",
+            "sadfgh"
+        ],
+        "UserStats": {
+            "BATK": 3,
+            "BDEF": 7,
+            "HP": 5,
+            "SATK": 6,
+            "SDEF": 3
+        }
     }
 }
