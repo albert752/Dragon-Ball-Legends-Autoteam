@@ -49,27 +49,6 @@ def _addManual(name, force, template):
     ready to be added to the characters dict
 
     '''
-    # template["Name"] = name
-    # if force == True:
-        # print("\nChanging Base Stats")
-        # for key in template["BaseStats"]:
-            # template["BaseStats"][key] = input("Enter " + key + " value: ")
-
-        # print("\nAdd the list of tags (coma+space separated)")
-        # template["Tags"] = input("Enter the list of tags: ").split(", ")
-    # print("\nAdd the User Satats")
-    # for key in template["UserStats"]:
-        # template["UserStats"][key] = input("Enter " + key + " value: ")
-
-    # print("\nAdd the Soul Boost Stats")
-    # for key in template["SoulBoost"]:
-        # template["SoulBoost"][key] = input("Enter " + key + " value: ")
-
-    # print("\nAdd the level")
-    # template["Level"] = input("Level of " + name + ": ")
-
-    # print("\nAdd the number of stars")
-    # template["Stars"] = int(input("Number of stars: "))
     pp(template)
     for key in template:
         if ("_" not in key):
@@ -82,6 +61,8 @@ def _addManual(name, force, template):
                 template[key] = int(input("Enter " + key + " value: "))
             elif(type(template[key]) == list):
                 template[key] = input("Enter the list of tags (, ): ").split(", ")
+            elif(template[key] == "Name"):
+                template[key] = name
             elif(type(template[key]) == str):
                 template[key] = input("Enter " +key+ "value: ")
     pp(template)

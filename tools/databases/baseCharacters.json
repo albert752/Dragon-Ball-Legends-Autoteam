@@ -1,4 +1,35 @@
 {
+    "": {
+        "BaseStats": {
+            "BATK": 2,
+            "BDEF": 2,
+            "HP": 2,
+            "SATK": 2,
+            "SDEF": 2
+        },
+        "Level": 2,
+        "Name": "",
+        "SoulBoost": {
+            "BATK": 2,
+            "BDEF": 2,
+            "HP": 2,
+            "SATK": 2,
+            "SDEF": 2
+        },
+        "Stars": 2,
+        "Tags": [
+            "hfadsf",
+            "sadfasdf",
+            "asdf"
+        ],
+        "UserStats": {
+            "BATK": 2,
+            "BDEF": 2,
+            "HP": 2,
+            "SATK": 2,
+            "SDEF": 2
+        }
+    },
     "BaseStats": {
         "BATK": 2237,
         "BDEF": 1231,
