@@ -58,7 +58,7 @@ def loadTemplate ():
         sys.exit("[ERRO]: Character template not found")
     else:
         file = open(link, "r")
-        template = json.load(file)
+        template = character.load(file)
         file.close()
     return template
 

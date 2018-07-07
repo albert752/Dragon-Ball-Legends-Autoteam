@@ -16,20 +16,20 @@ def printTitle (text, colour="YELLOW", line = "-", notch = "%"):
     printLine(len(text))
 
 
-def printMenu(options):
-    '''
-    Prints a menu with the goven options and returns the imput string that the
+def printMenu(optionsDicts):
+    """
+    Prints a menu with the given options and returns the imput string that the
     user gives.
         Args:
-            options: dict of option been the key the letter to press an d the
+            optionsDicts: dict of option been the key the letter to press an d the
                      value the string to print with it.
         Returns:
             String: the user's input
-    '''
-    optionsList = list(options.keys())
+    """
+    optionsList = list(optionsDicts.keys())
     optionsList.sort()
     for key in optionsList:
-        print(Fore.CYAN, key + ") " + options[key])
+        print(Fore.CYAN, key + ") " + optionsDicts[key])
     print(Fore.RESET, end = "")
     printBlanks(2)
     print(Fore.GREEN, "Select your option... ", end="")
@@ -37,12 +37,13 @@ def printMenu(options):
 
 
 def printBlanks (number):
+    """
+    Prints a number of blank spaces given by parameter
+    :param number: number of white spaces
+    :return: None
+    """
     for i in range(number):
         print()
-
-
-def printCharacter (character):
-    printLine()
 
 
 if __name__ == "__main__":
