@@ -78,17 +78,17 @@ def _addManual(name, force, template):
                 template[key] = name
             elif(type(template[key]) == str):
                 template[key] = input("Enter " +key+ " value: ")
-    template["ZPower"] = calcZPower(template)
+    template["ZPower"] = calcPower(template)
     pp(template)
     return {name: template}
 
 
 
 def _addAuto():
-    pass
+    print(Fore.RED, "Sorry, automatically adding characters has not been implemented yet :(")
 
 
-def calcZPower(character):
+def calcPower(character):
     '''
     Given a character dict, return  the character z power following the formula
     (hp/15) + SATK + BATK+ SDEF + BDEF + ((crit+ki+valish)/100)*1000
@@ -100,30 +100,14 @@ def calcZPower(character):
     '''
     baseUsrStats = 0
     for key in character["UserStats"]:
-        baseUsrStats = baseUsrStats + character["UserStats"][key]
-    baseUsrStats = baseUsrStats - character["UserStats"]["HP"]
-
-    baseSoulStats = 0
-    for key in character["SoulBoost"]:
-        baseSoulStats = baseSoulStats + character["SoulBoost"][key]
-    baseSoulStats = baseSoulStats - character["SoulBoost"]["HP"]
-
-    multi = _starsToPercentage(character["Stars"])
-    statsSum = (baseUsrStats + baseSoulStats)*multi
-    hp = (character["SoulBoost"]["HP"] + character["UserStats"]["HP"])*multi
-
+        if key != "HP":
+            baseUsrStats = baseUsrStats + character["UserStats"][key]
+    hp = character["UserStats"]["HP"]
     otherUserSum = 0
     for key in character["OtherUserStats"]:
-        otherUserSum = otherUserSum + character["OtherBaseStats"][key]
-
-    otherSoulBoost = 0
-    for key in character["OtherSoulBoost"]:
-        otherSoulBoost = otherSoulBoost + character["OtherUserStats"][key]
-
-    otherSum = (otherUserSum + otherSoulBoost)*multi
-
-    ZPower = (hp/15) + statsSum + ((otherSum+2000)/100)*character["Level"]
-    return ZPower
+        otherUserSum = otherUserSum + character["OtherUserStats"][key]
+    Power = (hp/15) + baseUsrStats + ((otherUserSum+2000)/100)*character["Level"]
+    return int(Power)
 
 
 def _starsToPercentage (numStars):
@@ -143,24 +127,15 @@ def _starsToPercentage (numStars):
 
 
 if __name__ == "__main__":
-    # print("Welcome to the manual updater")
-    # file = open("./databases/baseCharacters.json", "r")
-    # characters = json.load(file)
-    # pp(characters)
-    # file.close()
-    # cont = True
-
-    # while(cont):
-        # aux = addCharacter(force = True)
-        # characters.update(aux)
-        # pp(characters)
-        # cont = bool(input("Continue?  "))
-
-    # file = open("./databases/baseCharacters.json", "w")
-    # json.dump(characters, file, sort_keys = True, indent = 4, ensure_ascii = False)
-    # file.close()
-    file = open("./templates/character.json", "r")
-    character = json.load(file)
-    pp(character)
+    print("Welcome to the manual updater")
+    file = open("./databases/baseCharacters.json", "r")
+    characters = json.load(file)
+    pp(characters)
     file.close()
-    pp(calcZPower(character))
+    cont = True
+
+    while(cont):
+        aux = addCharacter(force = True)
+        characters.update(aux)
+        pp(characters)
+        cont = bool(input("continue?  "))
