@@ -1,6 +1,8 @@
 from pprint import pprint as pp
-import json
 from colorama import Fore, Back, Style, init
+import os
+import json
+import sys
 
 def loadCharacters ():
     file = open("./database/characters.json", "r")
@@ -33,7 +35,7 @@ def addCharacter(characters, baseCharacters, force = False):
 
     # Checks for force and if false if it's included
     if not force:
-        while(name in list(baseCharacters.keys())  == False):
+        while(not name in list(baseCharacters.keys())):
             name = input("The given name does not correspond to any valid character!\nTry again! ")
         character = characters.get(name)
         text = name
@@ -43,14 +45,25 @@ def addCharacter(characters, baseCharacters, force = False):
     aux = input("How do you want to set up " + text + "?\n[a fo Automatic, m for Manual]... ")
 
     if aux == "a":
-        return _addAuto(name, force, template)
+        return _addAuto(name, force)
     if aux == "m":
-        aux = _addManual(name, force,  template)
+        aux = _addManual(name, force)
         characters.update(aux)
         return aux
 
 
-def _addManual(name, force, template):
+def loadTemplate ():
+    link = "./tools/templates/character.json"
+    if os.path.isfile(link) == False:
+        sys.exit("[ERRO]: Character template not found")
+    else:
+        file = open(link, "r")
+        template = json.load(file)
+        file.close()
+    return template
+
+
+def _addManual(name, force):
     '''
     Asks for each parameter in the template and retuns the modified template
     ready to be added to the characters dict
@@ -58,12 +71,12 @@ def _addManual(name, force, template):
     returns:
         dict: dict with character naem as key and character dict as value
     '''
-
+    template = loadTemplate()
     # pp(template)
     listOfParams = list(template.keys())
     listOfParams.sort()
     for key in listOfParams:
-        if ("_" not in key and force == False):
+        if "_" not in key:
             print(Fore.YELLOW, end="")
             print("\nChanging "+key)
             print(Fore.RESET, end="")
@@ -76,28 +89,9 @@ def _addManual(name, force, template):
                 template[key] = int(input("Enter " + key + " value: "))
             elif(type(template[key]) == list):
                 template[key] = input("Enter the list of tags (, ): ").split(", ")
-            elif(template[key] == "Name"):
-                template[key] = name
             elif(type(template[key]) == str):
                 template[key] = input("Enter " +key+ " value: ")
-        elif force == True:
-            print(Fore.YELLOW, end="")
-            print("\nChanging "+key)
-            print(Fore.RESET, end="")
-            if(type(template[key]) == dict):
-                listOfItems = list(template[key].keys())
-                listOfItems.sort()
-                for item in listOfItems:
-                    template[key][item] = int(input("Enter " + item + " value: "))
-            elif(type(template[key]) == int):
-                template[key] = int(input("Enter " + key + " value: "))
-            elif(type(template[key]) == list):
-                template[key] = input("Enter the list of tags (, ): ").split(", ")
-            elif(template[key] == "Name"):
-                template[key] = name
-            elif(type(template[key]) == str):
-                template[key] = input("Enter " +key+ " value: ")
-    template["ZPower"] = calcPower(template)
+    template["_Power"] = calcPower(template)
     # pp(template)
     return {name: template}
 

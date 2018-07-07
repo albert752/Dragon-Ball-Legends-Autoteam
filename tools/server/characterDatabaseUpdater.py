@@ -8,10 +8,12 @@ import json
 baseCharacters = {}
 template = {}
 
-def openBaseCharacters ():
+def loadBaseCharacters (reload):
     global baseCharacters
-    if os.path.isfile("../databases/baseCharacters.json") == False:
-        open("../databases/baseCharacters.json", "w").close()
+    if os.path.isfile("../databases/baseCharacters.json") == False or reload == True:
+        file = open("../databases/baseCharacters.json", "w")
+        file.write("{}")
+        file.close()
         baseCharacters = {}
     else:
         file = open("../databases/baseCharacters.json", "r")
@@ -22,10 +24,11 @@ def addCharacterToBase ():
     global template, baseCharacters
     listOfParams = list(template.keys())
     listOfParams.sort()
-    template["Name"] = input("Enter characters name: ")
+    name = input("Enter characters name: ")
     for key in listOfParams:
-        pp(key)
-        if ("_" in str(key) == True):
+
+        # if ("_" in str(key) == True): is not working so I took a diferent aproach
+        if(len(key.split("_")) == 2):
             print(Fore.YELLOW, end="")
             print("\nChanging "+key)
             print(Fore.RESET, end="")
@@ -43,7 +46,7 @@ def addCharacterToBase ():
             elif(type(template[key]) == str):
                 template[key] = input("Enter " +key+ " value: ")
     # pp(template)
-    baseCharacters.update({template["Name"]: template})
+    baseCharacters.update({name: template})
     # pp(baseCharacters)
 
 
@@ -67,7 +70,8 @@ def saveChanges ():
 
 
 if __name__ == "__main__":
-    openBaseCharacters()
+    reload = bool(input("Do you want to reload the file? "))
+    loadBaseCharacters(reload)
     cont = True
     while(cont):
         reloadTemplate()

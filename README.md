@@ -17,19 +17,19 @@ First check if it's allready installed in your system:
 python3 -V
 ```
 
-If you get an output like Pyhton 3.x.x you can skip installing it, it not run:
+If you get an output like Pyhton 3.x.x you can skip installing it. If not, run:
 
 ```
 sudo apt install python3
 ```
 
-It is also very usefull to have pip3 installed in your system in order to get modules for python. Its is done by running: 
+It is also very usefull to have pip3 installed in your system in order to get modules for python. It is done by running: 
 
 ```
 sudo apt-get -y install python3-pip
 ```
 
-and the pip colorama
+and then pip colorama
 
 ```
 sudo pip3 colorama

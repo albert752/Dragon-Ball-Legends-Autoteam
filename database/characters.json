@@ -1,53 +1,82 @@
 {
-    "albert": {
+    "Piccolo SP": {
         "EquipmentSlots": 2,
         "Level": 1,
         "OtherSoulBoost": {
-            "Crit": 6,
-            "Ki": 6
+            "Crit": 1,
+            "Ki": 1
         },
         "OtherUserStats": {
-            "Crit": 6,
-            "Ki": 6
+            "Crit": 1,
+            "Ki": 1
         },
         "SoulBoost": {
-            "BATK": 7,
-            "BDEF": 7,
-            "HP": 7,
-            "SATK": 7,
-            "SDEF": 7
+            "BATK": 1,
+            "BDEF": 1,
+            "HP": 1,
+            "SATK": 1,
+            "SDEF": 1
         },
-        "Stars": 7,
+        "Stars": 1,
         "UserStats": {
-            "BATK": 7,
-            "BDEF": 7,
-            "HP": 7,
-            "SATK": 7,
-            "SDEF": 7
+            "BATK": 1,
+            "BDEF": 1,
+            "HP": 1,
+            "SATK": 1,
+            "SDEF": 1
         },
-        "ZPower": 48,
         "_BaseStats": {
-            "BATK": 2237,
-            "BDEF": 1231,
-            "HP": 16456,
-            "SATK": 1460,
-            "SDEF": 1243
+            "BATK": -1,
+            "BDEF": -1,
+            "HP": -1,
+            "SATK": -1,
+            "SDEF": -1
         },
         "_OtherBaseStats": {
-            "Crit": 0,
-            "Ki": 0
+            "Crit": -1,
+            "Ki": -1
         },
-        "_Power": 0,
-        "_Tags": [
-            "Frieza Force",
-            "Saiyan",
-            "Male",
-            "SPARKING",
-            "Ranged",
-            "Purple",
-            "Saiyan",
-            "Saga Z",
-            "Vegeta"
-        ]
+        "_Power": 24,
+        "_Tags": []
+    },
+    "Vegeta SP": {
+        "EquipmentSlots": 1,
+        "Level": 2,
+        "OtherSoulBoost": {
+            "Crit": 3,
+            "Ki": 2
+        },
+        "OtherUserStats": {
+            "Crit": 3,
+            "Ki": 2
+        },
+        "SoulBoost": {
+            "BATK": 3,
+            "BDEF": 2,
+            "HP": 3,
+            "SATK": 2,
+            "SDEF": 3
+        },
+        "Stars": 2,
+        "UserStats": {
+            "BATK": 3,
+            "BDEF": 2,
+            "HP": 3,
+            "SATK": 2,
+            "SDEF": 3
+        },
+        "_BaseStats": {
+            "BATK": -1,
+            "BDEF": -1,
+            "HP": -1,
+            "SATK": -1,
+            "SDEF": -1
+        },
+        "_OtherBaseStats": {
+            "Crit": -1,
+            "Ki": -1
+        },
+        "_Power": 50,
+        "_Tags": []
     }
 }
