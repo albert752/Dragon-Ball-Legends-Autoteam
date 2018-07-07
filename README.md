@@ -1,23 +1,43 @@
 # Dragon-Ball-Legends-Autoteam
 A unique tool that automatically creates the best DGL team form your character database. It automatically generates teh best team based on the characters you own based on their stats and synergies.
-<!--
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+**DISCLAIMER:** Since the progect it's in early stages and it's not functional yet. If you whant to collaborate please contact me at albert752@airmail.cc
 
 ### Prerequisites
 
-DISCLAIMER: Since the progect it's in early stages and it's not functional yet I can't assure this will be the final list of prerequisites.
 
 The Dragon Ball Legends Autoteam has been developed entierly in Python3 so you'll need to install that first:
 
 On Debian/Ubuntu: 
 
 First check if it's allready installed in your system:
+
 ```
-Give examples
+python3 -V
 ```
 
+If you get an output like Pyhton 3.x.x you can skip installing it, it not run:
+
+```
+sudo apt install python3
+```
+
+It is also very usefull to have pip3 installed in your system in order to get modules for python. Its is done by running: 
+
+```
+sudo apt-get -y install python3-pip
+```
+
+and the pip colorama
+
+```
+sudo pip3 colorama
+```
+
+And that's all for now, if I use any other modules or tools I'll make sure they get listed.
+
+<!--
 ### Installing
 
 A step by step series of examples that tell you how to get a development env running
