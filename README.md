@@ -2,7 +2,7 @@
 A unique tool that automatically creates the best DGL team form your character database. It automatically generates teh best team based on the characters you own based on their stats and synergies.
 ## Getting Started
 
-**DISCLAIMER:** Since the progect it's in early stages and it's not functional yet. If you whant to collaborate please contact me at albert752@airmail.cc
+**DISCLAIMER:** Since the progect it's in its early stages and it's not functional yet. If you whant to collaborate please contact me at albert752@airmail.cc
 
 ### Prerequisites
 
