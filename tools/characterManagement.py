@@ -15,7 +15,7 @@ def saveCharacters (characters):
     file.close()
 
 
-def addCharacter(characters = {}, force = False):
+def addCharacter(characters, baseCharacters, force = False):
     ''''
     Creates a character profile form a loaded template. If the parameter force
     equals True, the base stats can be modified, in other cases those are
@@ -30,15 +30,10 @@ def addCharacter(characters = {}, force = False):
     print(Fore.YELLOW)
     name = input("Enter the name of the character: ")
     print(Fore.RESET, end="")
-    # Loads the template of the character
-    # (Path relative to main file)
-    file = open("./tools/templates/character.json", "r")
-    template = json.load(file)
-    file.close()
 
     # Checks for force and if false if it's included
     if not force:
-        while(name in characters == False):
+        while(name in list(baseCharacters.keys())  == False):
             name = input("The given name does not correspond to any valid character!\nTry again! ")
         character = characters.get(name)
         text = name
@@ -59,16 +54,40 @@ def _addManual(name, force, template):
     '''
     Asks for each parameter in the template and retuns the modified template
     ready to be added to the characters dict
+
+    returns:
+        dict: dict with character naem as key and character dict as value
     '''
 
-    pp(template)
-    for key in template:
-        if ("_" not in key):
+    # pp(template)
+    listOfParams = list(template.keys())
+    listOfParams.sort()
+    for key in listOfParams:
+        if ("_" not in key and force == False):
             print(Fore.YELLOW, end="")
             print("\nChanging "+key)
             print(Fore.RESET, end="")
             if(type(template[key]) == dict):
-                for item in template[key]:
+                listOfItems = list(template[key].keys())
+                listOfItems.sort()
+                for item in listOfItems:
+                    template[key][item] = int(input("Enter " + item + " value: "))
+            elif(type(template[key]) == int):
+                template[key] = int(input("Enter " + key + " value: "))
+            elif(type(template[key]) == list):
+                template[key] = input("Enter the list of tags (, ): ").split(", ")
+            elif(template[key] == "Name"):
+                template[key] = name
+            elif(type(template[key]) == str):
+                template[key] = input("Enter " +key+ " value: ")
+        elif force == True:
+            print(Fore.YELLOW, end="")
+            print("\nChanging "+key)
+            print(Fore.RESET, end="")
+            if(type(template[key]) == dict):
+                listOfItems = list(template[key].keys())
+                listOfItems.sort()
+                for item in listOfItems:
                     template[key][item] = int(input("Enter " + item + " value: "))
             elif(type(template[key]) == int):
                 template[key] = int(input("Enter " + key + " value: "))
@@ -79,9 +98,8 @@ def _addManual(name, force, template):
             elif(type(template[key]) == str):
                 template[key] = input("Enter " +key+ " value: ")
     template["ZPower"] = calcPower(template)
-    pp(template)
+    # pp(template)
     return {name: template}
-
 
 
 def _addAuto():
@@ -125,17 +143,16 @@ def _starsToPercentage (numStars):
         return None
 
 
+# if __name__ == "__main__":
+    # print("Welcome to the manual updater")
+    # file = open("./databases/baseCharacters.json", "r")
+    # characters = json.load(file)
+    # pp(characters)
+    # file.close()
+    # cont = True
 
-if __name__ == "__main__":
-    print("Welcome to the manual updater")
-    file = open("./databases/baseCharacters.json", "r")
-    characters = json.load(file)
-    pp(characters)
-    file.close()
-    cont = True
-
-    while(cont):
-        aux = addCharacter(force = True)
-        characters.update(aux)
-        pp(characters)
-        cont = bool(input("continue?  "))
+    # while(cont):
+        # aux = addCharacter(force = True)
+        # characters.update(aux)
+        # pp(characters)
+        # cont = bool(input("continue?  "))

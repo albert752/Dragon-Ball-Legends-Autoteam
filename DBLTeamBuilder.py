@@ -7,18 +7,42 @@ from tools.characterManagement import saveCharacters
 import json
 import os
 
+'''
+First of all it loads all the characters base information to the baseCharacters
+variable form the baseCharacters.json file.
+'''
+if os.path.isfile("./tools/databases/baseCharacters.json") == False:
+    sys.exit("[ERROR]: baseCharacters.json file does not exist\n[CLUE]: Reinstall")
+elif:
+    file = open("./tools/databases/baseCharacters.json", "r")
+    baseCharacters = json.load(file)
+    file.close()
+
+''''
+Then it makes sure that a database of user-owned characters exist. If not,
+creates an empty one. After that, it creates the variable characters witch
+will contain this information.
+'''
+if os.path.isfile("/database/characters.json") == False:
+    file = open("/database/characters.json", "w")
+    file.write("{}")
+    file.close()
+    characters = {}
+elif:
+    characters.loadCharacters()
+
 os.system("clear")
 
 options = {"a": "Add character", "e": "add Equip", "c": "Create team", "p": "Print database", "u": "Update Database", "q": "Quit"}
 
 if __name__ == '__main__':
-    characters = loadCharacters()
+
     exit = False
     while(not exit):
         printTitle("Dragon Ball Legends Team Builder")
         option = printMenu(options)
         if option == 'a':
-            addCharacter(characters)
+            addCharacter(characters, baseCharacters)
             saveCharacters(characters)
         elif option =='q':
             exit = True

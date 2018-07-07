@@ -26,7 +26,9 @@ def printMenu(options):
         Returns:
             String: the user's input
     '''
-    for key in options.keys():
+    optionsList = list(options.keys())
+    optionsList.sort()
+    for key in optionsList:
         print(Fore.CYAN, key + ") " + options[key])
     print(Fore.RESET, end = "")
     printBlanks(2)

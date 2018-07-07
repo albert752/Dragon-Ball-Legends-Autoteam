@@ -1,62 +1,206 @@
 {
-    "ale": {
-        "BaseStats": {
-            "BATK": 2,
-            "BDEF": 2,
-            "HP": 2,
-            "SATK": 2,
-            "SDEF": 2
+    "": {
+        "EquipmentSlots": 1,
+        "Level": 1000,
+        "Name": "",
+        "OtherSoulBoost": {
+            "Crit": 67,
+            "Ki": 0
         },
-        "Level": 2,
+        "OtherUserStats": {
+            "Crit": 1068,
+            "Ki": 1874
+        },
         "SoulBoost": {
-            "BATK": 2,
-            "BDEF": 2,
-            "HP": 2,
-            "SATK": 2,
-            "SDEF": 2
-        },
-        "Stars": 9,
-        "Tags": [
-            "sdf",
-            "sdf",
-            "sdfg"
-        ],
-        "UserStats": {
-            "BATK": 2,
-            "BDEF": 2,
-            "HP": 2,
-            "SATK": 2,
-            "SDEF": 2
-        }
-    },
-    "andrea": {
-        "BaseStats": {
-            "BATK": 7,
-            "BDEF": 7,
-            "HP": 7,
-            "SATK": 7,
-            "SDEF": 7
-        },
-        "Level": 3,
-        "SoulBoost": {
-            "BATK": 3,
-            "BDEF": 3,
-            "HP": 3,
-            "SATK": 3,
-            "SDEF": 3
+            "BATK": 2155,
+            "BDEF": 1732,
+            "HP": 30065,
+            "SATK": 3038,
+            "SDEF": 1792
         },
         "Stars": 3,
-        "Tags": [
-            "fgsdf",
-            "sadf",
-            "sadfgh"
-        ],
         "UserStats": {
-            "BATK": 3,
-            "BDEF": 7,
-            "HP": 5,
-            "SATK": 6,
-            "SDEF": 3
-        }
+            "BATK": 34584,
+            "BDEF": 19523,
+            "HP": 268571,
+            "SATK": 24245,
+            "SDEF": 19765
+        },
+        "_BaseStats": {
+            "BATK": 2237,
+            "BDEF": 1231,
+            "HP": 16456,
+            "SATK": 1460,
+            "SDEF": 1243
+        },
+        "_OtherBaseStats": {
+            "Crit": 0,
+            "Ki": 0
+        },
+        "_Power": 0,
+        "_Tags": [
+            "Frieza Force",
+            "Saiyan",
+            "Male",
+            "SPARKING",
+            "Ranged",
+            "Purple",
+            "Saiyan",
+            "Saga Z",
+            "Vegeta"
+        ]
+    },
+    "hello": {
+        "EquipmentSlots": 1,
+        "Level": 1000,
+        "Name": "hello",
+        "OtherSoulBoost": {
+            "Crit": 67,
+            "Ki": 0
+        },
+        "OtherUserStats": {
+            "Crit": 1068,
+            "Ki": 1874
+        },
+        "SoulBoost": {
+            "BATK": 2155,
+            "BDEF": 1732,
+            "HP": 30065,
+            "SATK": 3038,
+            "SDEF": 1792
+        },
+        "Stars": 3,
+        "UserStats": {
+            "BATK": 34584,
+            "BDEF": 19523,
+            "HP": 268571,
+            "SATK": 24245,
+            "SDEF": 19765
+        },
+        "_BaseStats": {
+            "BATK": 2237,
+            "BDEF": 1231,
+            "HP": 16456,
+            "SATK": 1460,
+            "SDEF": 1243
+        },
+        "_OtherBaseStats": {
+            "Crit": 0,
+            "Ki": 0
+        },
+        "_Power": 0,
+        "_Tags": [
+            "Frieza Force",
+            "Saiyan",
+            "Male",
+            "SPARKING",
+            "Ranged",
+            "Purple",
+            "Saiyan",
+            "Saga Z",
+            "Vegeta"
+        ]
+    },
+    "hh": {
+        "EquipmentSlots": 1,
+        "Level": 1000,
+        "Name": "hh",
+        "OtherSoulBoost": {
+            "Crit": 67,
+            "Ki": 0
+        },
+        "OtherUserStats": {
+            "Crit": 1068,
+            "Ki": 1874
+        },
+        "SoulBoost": {
+            "BATK": 2155,
+            "BDEF": 1732,
+            "HP": 30065,
+            "SATK": 3038,
+            "SDEF": 1792
+        },
+        "Stars": 3,
+        "UserStats": {
+            "BATK": 34584,
+            "BDEF": 19523,
+            "HP": 268571,
+            "SATK": 24245,
+            "SDEF": 19765
+        },
+        "_BaseStats": {
+            "BATK": 2237,
+            "BDEF": 1231,
+            "HP": 16456,
+            "SATK": 1460,
+            "SDEF": 1243
+        },
+        "_OtherBaseStats": {
+            "Crit": 0,
+            "Ki": 0
+        },
+        "_Power": 0,
+        "_Tags": [
+            "Frieza Force",
+            "Saiyan",
+            "Male",
+            "SPARKING",
+            "Ranged",
+            "Purple",
+            "Saiyan",
+            "Saga Z",
+            "Vegeta"
+        ]
+    },
+    "kaglsdfiysdb": {
+        "EquipmentSlots": 1,
+        "Level": 1000,
+        "Name": "kaglsdfiysdb",
+        "OtherSoulBoost": {
+            "Crit": 67,
+            "Ki": 0
+        },
+        "OtherUserStats": {
+            "Crit": 1068,
+            "Ki": 1874
+        },
+        "SoulBoost": {
+            "BATK": 2155,
+            "BDEF": 1732,
+            "HP": 30065,
+            "SATK": 3038,
+            "SDEF": 1792
+        },
+        "Stars": 3,
+        "UserStats": {
+            "BATK": 34584,
+            "BDEF": 19523,
+            "HP": 268571,
+            "SATK": 24245,
+            "SDEF": 19765
+        },
+        "_BaseStats": {
+            "BATK": 2237,
+            "BDEF": 1231,
+            "HP": 16456,
+            "SATK": 1460,
+            "SDEF": 1243
+        },
+        "_OtherBaseStats": {
+            "Crit": 0,
+            "Ki": 0
+        },
+        "_Power": 0,
+        "_Tags": [
+            "Frieza Force",
+            "Saiyan",
+            "Male",
+            "SPARKING",
+            "Ranged",
+            "Purple",
+            "Saiyan",
+            "Saga Z",
+            "Vegeta"
+        ]
     }
 }
