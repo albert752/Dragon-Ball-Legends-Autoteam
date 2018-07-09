@@ -3,6 +3,7 @@ from tools.cli import printMenu
 from tools.characterManagement import addCharacter
 from tools.characterManagement import loadCharacters
 from tools.characterManagement import saveCharacters
+from tools.teamBuilder import create_team
 import json
 import os
 import sys
@@ -44,6 +45,8 @@ if __name__ == '__main__':
         if option == 'a':
             addCharacter(characters, baseCharacters)
             saveCharacters(characters)
+        elif option == 'c':
+            create_team(characters)
         elif option =='q':
             cont = False
         os.system("clear")
