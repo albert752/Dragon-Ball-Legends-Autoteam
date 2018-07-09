@@ -11,7 +11,7 @@ import sys
 First of all it loads all the characters base information to the baseCharacters
 variable form the baseCharacters.json file.
 '''
-if os.path.isfile("./tools/databases/baseCharacters.json"):
+if not os.path.isfile("./tools/databases/baseCharacters.json"):
     sys.exit("[ERROR]: baseCharacters.json file does not exist\n[CLUE]: Reinstall")
 else:
     file = open("./tools/databases/baseCharacters.json", "r")
@@ -33,7 +33,8 @@ else:
 
 os.system("clear")
 
-options = {"a": "Add character", "e": "add Equip", "c": "Create team", "p": "Print database", "u": "Update character", "q": "Quit"}
+options = {"a": "Add character", "e": "add Equip", "c": "Create team",
+           "p": "Print database", "u": "Update character", "q": "Quit"}
 
 if __name__ == '__main__':
     cont = True

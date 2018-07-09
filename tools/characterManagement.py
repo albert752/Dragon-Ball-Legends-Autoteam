@@ -5,6 +5,10 @@ import json
 import sys
 
 def loadCharacters ():
+    """
+    Returns the characters variable stored in a database in json format
+    :return: dict
+    """
     file = open("./database/characters.json", "r")
     characters = json.load(file)
     file.close()
@@ -12,6 +16,13 @@ def loadCharacters ():
 
 
 def saveCharacters (characters):
+    """
+    Saves the user created characters to the database file. It overwrites it, assuming that all teh previous information
+    is contained in characters.
+
+    :param: characters: dict of all user created characters
+    :return: None
+    """
     file = open("./database/characters.json", "w")
     json.dump(characters, file, sort_keys = True, indent = 4, ensure_ascii = False)
     file.close()
@@ -23,7 +34,7 @@ def addCharacter(characters, baseCharacters, force = False):
     equals True, the base stats can be modified, in other cases those are
     locked.
 
-    Args:
+    :arg:
         character: dict of characters that is going to be updated.
         force: has a default value of false, enables the edition of base stats
     '''
@@ -35,7 +46,7 @@ def addCharacter(characters, baseCharacters, force = False):
 
     # Checks for force and if false if it's included
     if not force:
-        while(not name in list(baseCharacters.keys())):
+        while not name in list(baseCharacters.keys()):
             name = input("The given name does not correspond to any valid character!\nTry again! ")
         character = characters.get(name)
         text = name
@@ -53,23 +64,29 @@ def addCharacter(characters, baseCharacters, force = False):
 
 
 def loadTemplate ():
+    """
+    Loads the template json file and returns it as a dict. If the template does not exists, exits execution with an
+    error message.
+
+    :return: dict: character template
+    """
     link = "./tools/templates/character.json"
     if os.path.isfile(link) == False:
-        sys.exit("[ERRO]: Character template not found")
+        sys.exit("[ERROR]: Character template not found\n[CLUE]: Reinstall")
     else:
         file = open(link, "r")
-        template = character.load(file)
+        template = json.load(file)
         file.close()
     return template
 
 
 def _addManual(name, force):
     '''
-    Asks for each parameter in the template and retuns the modified template
+    Asks for each parameter in the template and returns the modified template
     ready to be added to the characters dict
 
-    returns:
-        dict: dict with character naem as key and character dict as value
+    :returns:
+        dict: dict with character name as key and character dict as value
     '''
     template = loadTemplate()
     # pp(template)
@@ -80,17 +97,17 @@ def _addManual(name, force):
             print(Fore.YELLOW, end="")
             print("\nChanging "+key)
             print(Fore.RESET, end="")
-            if(type(template[key]) == dict):
+            if type(template[key]) == dict:
                 listOfItems = list(template[key].keys())
                 listOfItems.sort()
                 for item in listOfItems:
                     template[key][item] = int(input("Enter " + item + " value: "))
-            elif(type(template[key]) == int):
+            elif type(template[key]) == int:
                 template[key] = int(input("Enter " + key + " value: "))
-            elif(type(template[key]) == list):
+            elif type(template[key]) == list:
                 template[key] = input("Enter the list of tags (, ): ").split(", ")
-            elif(type(template[key]) == str):
-                template[key] = input("Enter " +key+ " value: ")
+            elif type(template[key]) == str:
+                template[key] = input("Enter " + key + " value: ")
     template["_Power"] = calcPower(template)
     # pp(template)
     return {name: template}
@@ -101,15 +118,13 @@ def _addAuto():
 
 
 def calcPower(character):
-    '''
+    """
     Given a character dict, return  the character z power following the formula
     (hp/15) + SATK + BATK+ SDEF + BDEF + ((crit+ki+valish)/100)*1000
 
-    args:
-        character: desired character's dict
-    returns:
-        int: ZPower
-    '''
+    :arg character: desired character's dict
+    :returns int: ZPower
+    """
     baseUsrStats = 0
     for key in character["UserStats"]:
         if key != "HP":
@@ -123,6 +138,12 @@ def calcPower(character):
 
 
 def _starsToPercentage (numStars):
+    """
+    Converts a given number of stars to its percentage
+
+    :param numStars: teh number of stars as an integer or float
+    :return: the percentage is the number is valid or None if it's not.
+    """
     if numStars == 0:
         return 1
     elif numStars == 1:
