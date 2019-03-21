@@ -1,4 +1,4 @@
-# Dragon-Ball-Legends-Autoteam
+# Dragon-Ball-Legends-Autoteam (DISCONTINUED)
 A unique tool that automatically creates the best DGL team form your character database. It automatically generates teh best team based on the characters you own based on their stats and synergies.
 ## Getting Started
 
